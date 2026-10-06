@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سنگ کاغذ قیچی</title>
+    <link rel="stylesheet" href="game.css">
+</head>
+
+<body>
+
+    <h1>🎮 سنگ، کاغذ، قیچی</h1>
+
+    <p>یکی رو انتخاب کن:</p>
+
+    <div class="choices">
+        <button onclick="play('rock')">✊ سنگ</button>
+        <button onclick="play('paper')">📄 کاغذ</button>
+        <button onclick="play('scissors')">✂️ قیچی</button>
+    </div>
+
+    <div id="result"></div>
+
+    <a href="index.html">
+        <button>🏠 بازگشت به خانه</button>
+    </a>
+
+    <script>
+        function play(player) {
+            const choices = ["rock", "paper", "scissors"];
+            const computer = choices[Math.floor(Math.random() * 3)];
+
+            let result = "";
+
+            if (player === computer) {
+                result = "🤝 مساوی شد!";
+            } else if (
+                (player === "rock" && computer === "scissors") ||
+                (player === "paper" && computer === "rock") ||
+                (player === "scissors" && computer === "paper")
+            ) {
+                result = "🎉 تو بردی!";
+            } else {
+                result = "😎 کامپیوتر برد!";
+            }
+
+            document.getElementById("result").innerHTML =
+                result + "<br><br>انتخاب کامپیوتر: " + computer;
+        }
+    </script>
+
+</body>
+</html>
