@@ -1,0 +1,10 @@
+body {
+    background: linear-gradient(blue,purple);
+
+}
+
+div {
+    width: 500px;
+    text-align: center;
+
+}
